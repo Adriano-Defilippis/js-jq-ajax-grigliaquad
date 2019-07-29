@@ -19,8 +19,17 @@ $(document).ready(function(){
         success : function (data,stato) {
 
           var numapi = data.response;
+
+          // Cambio lo style color a seconda se lo user ha digitato maschi o femmina alla richiesta del prompt
+          if (numapi < 5) {
+            thisSquare.attr('style',  'background-color:yellow');
+          }else if (numapi > 5){
+            thisSquare.attr('style',  'background-color:green');
+          }
+
           thisSquare.html(numapi);
 
+          console.log("oggetto cliccato: ", thisSquare);
           console.log("numero ottnuto dal server: ", numapi);
         },
 
