@@ -5,12 +5,19 @@
 
 $(document).ready(function(){
 
+  // Chiedo con prompt, quante righe e quante COLONNE
+  // deve avere la griglia da generare
+  var numRow = parseInt(prompt('inserisci un numero di righe'));
+  var numColumn = parseInt(prompt('inserisci un numero di colonne'));
+  var output = $('.wrapper')
+
+  gridGenerate(numRow, numColumn , output);
+
+
   // AL CLICK sul quadrato ad ogni click parte
  // una richiesta AJAX che prende un numero random da 1 a 9.c
   $(document).off().on("click", ".square",function(){
 
-    // Chiedo con prompt, quante righe e quante COLONNE
-    // deve avere la griglia da generare
 
 
     var thisSquare = $(this);
@@ -51,8 +58,21 @@ $(document).ready(function(){
 
 //FUNZIONE CHE GENERA UNA GRIGLIA IN BASE
 //A NUMERO DI RIGHE E COLONNE SCELTRE DALL'UTENTE
-function gridGenerate(numRow, numColumn){
+function gridGenerate(numRow, numColumn, output){
 
 
+  for (var i = 0; i < numRow; i++) {
+    var addRow = $('#myTemplate .row').clone();
+
+    for (var j = 0; j < numColumn; j++) {
+      var addSquare = $('#myTemplate .square').clone();
+
+      addRow.append(addSquare);
+      
+    }
+    output.append(addRow);
+
+    console.log("RigaGenerata con quadrati interni", addRow);
+  }
 
 }
