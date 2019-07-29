@@ -60,6 +60,10 @@ $(document).ready(function(){
 //A NUMERO DI RIGHE E COLONNE SCELTRE DALL'UTENTE
 function gridGenerate(numRow, numColumn, output){
 
+  //Variabile che registra la larghezza del quadrato in base al NUMERO
+  //delle colonne da generare
+  var modWidth = numColumn;
+
 
   for (var i = 0; i < numRow; i++) {
     var addRow = $('#myTemplate .row').clone();
@@ -67,8 +71,9 @@ function gridGenerate(numRow, numColumn, output){
     for (var j = 0; j < numColumn; j++) {
       var addSquare = $('#myTemplate .square').clone();
 
+      addSquare.css( "width", "calc(100% /"+numColumn+" - 5px)" );
       addRow.append(addSquare);
-      
+
     }
     output.append(addRow);
 
