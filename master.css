@@ -19,7 +19,6 @@ body{
   height: auto;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 
 }
 
@@ -28,3 +27,8 @@ body{
   height: 100px;
   background-color: red;
 }
+
+
+
+
+/* HELPER CLASS */
