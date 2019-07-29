@@ -3,6 +3,7 @@ body{
 }
 
 .wrapper{
+  padding: 2px 0;
   margin: 0 auto;
   width: 80vw;
   border: 2px solid black;
@@ -19,7 +20,7 @@ body{
   height: auto;
   display: flex;
   justify-content: space-between;
-  margin: 5px 5px;
+  margin: 5px 0;
 
 }
 
@@ -30,7 +31,7 @@ body{
   text-align: center;
   width: calc(100% / 6 - 5px);
   height: 100px;
-  background-color: red;
+  background-color: lightgrey;
   font-size: 24px;
 }
 

@@ -19,42 +19,53 @@ $(document).ready(function(){
   $(document).off().on("click", ".square",function(){
 
 
-
     var thisSquare = $(this);
-    // Chiamata AJAX con JQuery
-    $.ajax(
-      {
 
-        url : "https://flynn.boolean.careers/exercises/api/random/int",
-        method : "GET",
-        success : function (data,stato) {
+    thisSquare.attr("checked","yes");
 
-          var numapi = data.response;
+    var attr = thisSquare.attr("checked");
+    console.log(attr);
 
-          // Cambio lo style color a seconda se lo user ha digitato maschi o femmina alla richiesta del prompt
-          if (numapi < 5) {
-            thisSquare.attr('style',  'background-color:yellow');
-          }else if (numapi > 5){
-            thisSquare.attr('style',  'background-color:green');
+    //Controllo se il quadrato non è gia stato cliccato
+    if (attr == "checked") {
+
+      // Chiamata AJAX con JQuery
+      $.ajax(
+        {
+
+          url : "https://flynn.boolean.careers/exercises/api/random/int",
+          method : "GET",
+          success : function (data,stato) {
+
+            var numapi = data.response;
+
+            // Cambio lo style color a seconda se lo user ha digitato maschi o femmina alla richiesta del prompt
+            if (numapi < 5) {
+              thisSquare.css( "background-color", "lightyellow");
+            }else if (numapi > 5){
+              thisSquare.css( "background-color", "lightgreen");
+            }
+
+            // Stampo il numero al centro del quadrato cliccato
+            thisSquare.html(numapi);
+
+            console.log("oggetto cliccato: ", thisSquare);
+            console.log("numero ottnuto dal server: ", numapi);
+          },
+
+          error : function (richiesta,stato,errore) {
+          alert("E' avvenuto un errore. "+errore);
           }
 
-          // Stampo il numero al centro del quadrato cliccato
-          thisSquare.html(numapi);
-
-          console.log("oggetto cliccato: ", thisSquare);
-          console.log("numero ottnuto dal server: ", numapi);
-        },
-
-        error : function (richiesta,stato,errore) {
-        alert("E' avvenuto un errore. "+errore);
-        }
-
-      });
+        });
+      }
 
   });
 
 // CHIUSARA DOCUMENT.READY
 });
+
+
 
 //FUNZIONE CHE GENERA UNA GRIGLIA IN BASE
 //A NUMERO DI RIGHE E COLONNE SCELTRE DALL'UTENTE
