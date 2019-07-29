@@ -9,6 +9,10 @@ $(document).ready(function(){
  // una richiesta AJAX che prende un numero random da 1 a 9.c
   $(document).off().on("click", ".square",function(){
 
+    // Chiedo con prompt, quante righe e quante COLONNE
+    // deve avere la griglia da generare
+
+
     var thisSquare = $(this);
     // Chiamata AJAX con JQuery
     $.ajax(
@@ -27,6 +31,7 @@ $(document).ready(function(){
             thisSquare.attr('style',  'background-color:green');
           }
 
+          // Stampo il numero al centro del quadrato cliccato
           thisSquare.html(numapi);
 
           console.log("oggetto cliccato: ", thisSquare);
@@ -43,3 +48,11 @@ $(document).ready(function(){
 
 // CHIUSARA DOCUMENT.READY
 });
+
+//FUNZIONE CHE GENERA UNA GRIGLIA IN BASE
+//A NUMERO DI RIGHE E COLONNE SCELTRE DALL'UTENTE
+function gridGenerate(numRow, numColumn){
+
+
+
+}

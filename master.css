@@ -33,7 +33,9 @@ body{
   font-size: 24px;
 }
 
-
+#myTemplate{
+  display: none;
+}
 
 
 
