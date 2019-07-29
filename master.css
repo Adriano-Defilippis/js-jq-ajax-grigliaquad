@@ -1,0 +1,30 @@
+body{
+  /* text-align: center; */
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 80vw;
+  border: 2px solid black;
+}
+
+.wrapper::after{
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.row{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.square{
+  width: calc(100% / 6 - 5px);
+  height: 100px;
+  background-color: red;
+}
