@@ -11,6 +11,7 @@ $(document).ready(function(){
   var numColumn = parseInt(prompt('inserisci un numero di colonne'));
   var output = $('.wrapper')
 
+
   gridGenerate(numRow, numColumn , output);
 
 
@@ -21,12 +22,13 @@ $(document).ready(function(){
 
     var thisSquare = $(this);
 
+    //AL click aggingo un attributo per il controllo
     thisSquare.attr("checked","yes");
 
     var attr = thisSquare.attr("checked");
     console.log(attr);
 
-    //Controllo se il quadrato non è gia stato cliccato
+    //Controllo se il quadrato non è gia stato cliccato(NON GIRA ANCORA)
     if (attr == "checked") {
 
       // Chiamata AJAX con JQuery
