@@ -22,14 +22,13 @@ $(document).ready(function(){
 
     var thisSquare = $(this);
 
-    //AL click aggingo un attributo per il controllo
-    thisSquare.attr("checked","yes");
 
-    var attr = thisSquare.attr("checked");
-    console.log(attr);
+    //AL click aggingo un attributo per il controllo
+    // thisSquare.attr("checked","yes");
+
 
     //Controllo se il quadrato non è gia stato cliccato(NON GIRA ANCORA)
-    if (attr == "checked") {
+    if (!thisSquare.hasClass("checked")) {
 
       // Chiamata AJAX con JQuery
       $.ajax(
@@ -39,6 +38,8 @@ $(document).ready(function(){
           method : "GET",
           success : function (data,stato) {
 
+            var attr = thisSquare.addClass("checked");
+            console.log("verifica presenza attributo: ",attr);
             var numapi = data.response;
 
             // Cambio lo style color a seconda se lo user ha digitato maschi o femmina alla richiesta del prompt
