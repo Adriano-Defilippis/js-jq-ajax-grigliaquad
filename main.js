@@ -77,13 +77,14 @@ function gridGenerate(numRow, numColumn, output){
   //Variabile che registra la larghezza del quadrato in base al NUMERO
   //delle colonne da generare
   var modWidth = numColumn;
-
+  var addRow;
+  var addSquare;
 
   for (var i = 0; i < numRow; i++) {
-    var addRow = $('#myTemplate .row').clone();
+    addRow = $('#myTemplate .row').clone();
 
     for (var j = 0; j < numColumn; j++) {
-      var addSquare = $('#myTemplate .square').clone();
+      addSquare = $('#myTemplate .square').clone();
 
       addSquare.css( "width", "calc(100% /"+numColumn+" - 5px)" );
       addRow.append(addSquare);
