@@ -43,7 +43,7 @@ $(document).ready(function(){
 
             // Cambio lo style color a seconda se lo user ha digitato maschi o femmina alla richiesta del prompt
             if (numapi < 5) {
-              thisSquare.css( "background-color", "lightyellow");
+              thisSquare.css( "background-color", "yellow");
             }else if (numapi > 5){
               thisSquare.css( "background-color", "lightgreen");
             }
